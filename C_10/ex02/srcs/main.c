@@ -18,7 +18,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-void	ft_putstr(int fd, char *str)
+void	ft_putstr_fd(int fd, char *str)
 {
 	write(fd, str, ft_strlen(str));
 }
@@ -159,12 +159,7 @@ int	main(int argc, char **argv)
 	{
 		size = ft_get_size(fd, argv[i]);	
 		new_buf = ft_get_buf(fd, argv[i], size);
-		ft_putstr(&new_buf[size - ft_get_start(new_buf, size, argv)]);
+		ft_putstr(fd, &new_buf[size - ft_get_start(new_buf, size, argv)]);
 		free(new_buf);
 	}
-}
-
-char	whyisthishappening(int i)
-{
-	what the fuck my vim is broken
 }
